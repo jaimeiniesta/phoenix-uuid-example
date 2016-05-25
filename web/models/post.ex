@@ -1,6 +1,8 @@
 defmodule Blog.Post do
   use Blog.Web, :model
 
+  @primary_key {:id, :binary_id, autogenerate: true}
+
   schema "posts" do
     field :title, :string
     field :body, :string
