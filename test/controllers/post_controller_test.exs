@@ -34,7 +34,7 @@ defmodule Blog.PostControllerTest do
 
   test "renders page not found when id is nonexistent", %{conn: conn} do
     assert_error_sent 404, fn ->
-      get conn, post_path(conn, :show, -1)
+      get conn, post_path(conn, :show, Ecto.UUID.generate)
     end
   end
 
